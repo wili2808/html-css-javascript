@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Outfit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+:root {
+    --color-barra-lateral: rgb(255, 247, 232);
+    
+    --color-texto: rgb(0, 0, 0);
+    --color-texto-menu: rgb(134, 136, 144); 
+
+    --color-boton: hwb(0 0% 100%);
+    --color-boton-texto:  rgb(255,255,255);
+
+    --color-hover: rgb(211, 191, 191);
+    --color-hover-texto: rgb(0,0,0);
+
+    --color-linea: rgb(182, 182, 182);
+
+    --color-switch-base: rgb(201,202,206);
+    --color-switch-circulo: rgb(134,136,144);
+
+    --color-scroll: rgb(192,192,192);
+    --color-scroll-hover: rgb(134,134,134);
+}
+.dark-mode{
+    --color-barra-lateral: rgb(44,45,49);
+    
+    --color-texto: rgb(255,255,255);
+    --color-texto-menu: rgb(110,110,117); 
+
+    --color-boton: rgb(255,255,255);
+    --color-boton-texto:  rgb(0,0,0);
+
+    --color-hover: rgb(41, 31, 31);
+    --color-hover-texto: rgb(255,255,255);
+
+    --color-linea: rgb(71,70,80);
+
+    --color-switch-base: rgb(201,202,206);
+    --color-switch-circulo: rgb(134,136,144);
+
+    --color-scroll: rgb(68,69,74);
+    --color-scroll-hover: rgb(85,85,85);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(72, 71, 73);
+}
+
+/*//////////////////////////////////// Boton de Menu Flotante  ///////*/
+.menu {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    border-radius: 50%;
+    right: 15px;
+    top: 15px;
+    z-index: 100;
+}
+.menu:hover {
+    color: var(--color-hover-texto);
+    background-color: var(--color-hover);
+}
+/*//////////////////////////////////// Barra Lateral  ///////*/
+.barra-lateral {
+    width: 250px;
+    height: 100%;
+    padding: 20px 15px;
+    color: var(--color-texto);
+    background-color: var(--color-barra-lateral);
+    transition: width 0.5s ease, background-color 0.3s ease, color 0.2s ease, left 1s ease;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: fixed;
+    z-index: 50;
+}
+.mini-barra-lateral {
+    width: 80px;
+}
+
+/*//////////////////////////////////// Spans  ///////*/
+.barra-lateral span {
+    font-size: 18px;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.5s ease,width 0.5s ease;
+    white-space: nowrap;
+    width: 100px;
+}
+.barra-lateral span.oculto {
+    opacity: 0;
+    width: 0;
+}
+
+/*//////////////////////////////////// Nombre de Página  ///////*/
+.barra-lateral .nombre-pagina {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.barra-lateral .nombre-pagina span {
+    margin-left: 5px;
+    font-size: 25px;
+    font-weight: bolder;
+    cursor: default;
+}
+.barra-lateral .nombre-pagina ion-icon {
+    min-width: 50px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/*//////////////////////////////////// Botón Crear Nuevo  ///////*/
+.barra-lateral .btn-create-new {
+    color: var(--color-boton-texto);
+    background-color: var(--color-boton);
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.barra-lateral .btn-create-new:hover{
+    color: var(--color-hover-texto);
+    background-color: var(--color-hover);
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+.barra-lateral .btn-create-new ion-icon {
+    font-size: 25px;
+    min-width: 50px;
+}
+
+/*////////////////////////////////////  Navegación  ///////*/
+.barra-lateral .navegacion {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.barra-lateral .navegacion::-webkit-scrollbar {
+    width: 5px;
+}
+.barra-lateral .navegacion::-webkit-scrollbar-thumb {
+    background-color: var(--color-scroll);
+    border-radius: 5px;
+}
+.barra-lateral .navegacion::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scroll-hover);
+}
+.barra-lateral .navegacion li{
+    list-style: none;
+    display: flex;
+    margin-bottom: 5px;
+}
+.barra-lateral .navegacion a{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    color: var(--color-texto-menu);
+}
+.barra-lateral .navegacion a:hover {
+    background-color: var(--color-hover);
+    color: var(--color-hover-texto);
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+.barra-lateral .navegacion ion-icon {
+    width: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*////////////////////////////////////  Linea  ///////*/
+.barra-lateral .linea {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-linea);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*////////////////////////////////////  Modo Oscuro  ///////*/
+.barra-lateral .modo-oscuro {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: default;
+    margin-top: 5px;
+}
+.barra-lateral .modo-oscuro .info {
+    width: 150px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.barra-lateral .modo-oscuro .info ion-icon {
+    min-width: 50px;
+    font-size: 20px;
+}
+
+/*////////////////////////////////////  Switch  ///////*/
+.barra-lateral .modo-oscuro .switch {
+    min-width: 50px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.barra-lateral .modo-oscuro .base {
+    background-color: var(--color-switch-base);
+    position: relative;
+    width: 35px;
+    height: 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+.barra-lateral .modo-oscuro .base:hover {
+    cursor: pointer;
+}
+.barra-lateral .modo-oscuro .circulo {
+    background-color: var(--color-switch-circulo);
+    position: absolute;
+    width: 18px;
+    height: 90%;
+    border-radius: 50px;
+    left: 1.5px;
+    transition: left 0.3s ease;
+}
+.barra-lateral .modo-oscuro .circulo-on {
+    left: 16px;
+}
+
+/*////////////////////////////////////  Usuario  ///////*/
+.barra-lateral .user {
+    display: flex;
+    bottom: 5px;
+}
+.barra-lateral .user .avatar {
+    width: 50px;
+    min-width: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.barra-lateral .user .user-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-texto);
+    overflow: hidden;
+}
+.barra-lateral .user .name-mail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+.barra-lateral .user .name {
+    font-size: 15px;
+    font-weight: 600;
+}
+.barra-lateral .user .user-info .mail {
+    font-size: 13px;
+}
+.barra-lateral .user .user-config {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*////////////////////////////////////  Main - Contenido de la pagina  ///////*/
+main {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.5s ease;
+}
+.min-main {
+    margin-left: 80px;
+}
+
+/*////////////////////////////////////  Media Querys  ///////*/
+@media (max-height:667px) {
+    .barra-lateral .nombre-pagina {
+        margin-bottom: 5px;
+    }
+}
+@media (max-width:600px) {
+    .barra-lateral {
+        position: fixed;
+        left: -250px;
+    }
+    .max-barra-lateral {
+        left: 0;
+    }
+    .menu{
+        display: flex;
+    }
+    .menu ion-icon:nth-child(2) {
+        display: none;
+    }
+    main{
+        margin-left: 0;
+    }
+    main.min-main{
+        margin-left: 0;
+    }
+}
