@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    border: 2px solid rgb(0, 0, 0);
+    width: 100%;
+    height: 100VH;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    border: 2px solid rgb(0, 0, 0);
+    width: 800px;
+    height: 500px;
+    display: flex;
+}
+
+.container-form {
+    border: 2px solid rgb(38, 70, 200);
+    width: 100%;
+}
+
+.container-form form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container-form h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.social-networks {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+.social-networks ion-icon {
+    border: 1px solid #C9cccb;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+}
+.container-form span {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+.container-input {
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 15px;
+    background-color: #eeeeee;
+    margin-bottom: 10px;
+}  
+.container-input ion-icon {
+}
+.container-input input{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 100%;
+    background-color: inherit;
+}
+.container-form a{r: aquamarine;
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+.container-form .btn{
+    width: 170px;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    background-color: #3ab397;
+    color: white;
+}
+
+/* Animacion */
+.sign-in{
+    transform: translateX(100%);
+}
+.sign-up{
+    transform: translateX(-100%);
+}
